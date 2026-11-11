@@ -1,0 +1,147 @@
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background: #e8e8e8;
+    font-family: Arial, sans-serif;
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.game-container {
+    width: 94%;
+    max-width: 850px;
+    text-align: center;
+}
+
+h1 {
+    margin-bottom: 20px;
+    letter-spacing: 5px;
+    color: #333;
+}
+
+.score {
+    text-align: right;
+    font-weight: bold;
+    margin-bottom: 10px;
+    font-size: 14px;
+}
+
+#game {
+    width: 100%;
+    height: 250px;
+    position: relative;
+    overflow: hidden;
+    background: #dff3ff;
+    border: 2px solid #333;
+    border-radius: 5px;
+    transition: background 1s;
+    touch-action: manipulation;
+}
+
+#game::after {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    height: 3px;
+    background: #555;
+}
+
+#dino {
+    position: absolute;
+    left: 50px;
+    bottom: 0;
+    width: 48px;
+    height: 55px;
+    font-size: 43px;
+    line-height: 55px;
+    z-index: 2;
+    user-select: none;
+    transform-origin: bottom center;
+}
+
+#dino.duck {
+    transform: scaleY(0.65);
+}
+
+.obstacle {
+    position: absolute;
+    user-select: none;
+    z-index: 2;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.cactus {
+    font-size: 35px;
+    line-height: 1;
+}
+
+.cactus.tall {
+    font-size: 48px;
+}
+
+.cactus.double {
+    font-size: 42px;
+}
+
+.seagull {
+    font-size: 30px;
+    line-height: 1;
+    animation: flap 0.25s infinite alternate ease-in-out;
+}
+
+@keyframes flap {
+    from {
+        transform: translateY(-3px) rotate(-5deg);
+    }
+    to {
+        transform: translateY(3px) rotate(5deg);
+    }
+}
+
+#game-over {
+    display: none;
+    position: absolute;
+    inset: 0;
+    background: rgba(255,255,255,0.9);
+    z-index: 5;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    gap: 15px;
+}
+
+#game-over h2 {
+    color: #333;
+    font-size: 30px;
+}
+
+button {
+    padding: 12px 28px;
+    background: #333;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-weight: bold;
+}
+
+button:hover {
+    background: #555;
+}
+
+.instructions {
+    margin-top: 15px;
+    color: #555;
+    line-height: 1.8;
+    font-size: 12px;
+}

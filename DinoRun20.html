@@ -1,0 +1,42 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dino Run 2.0</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<div class="game-container">
+    <h1>DINO RUN</h1>
+
+    <div class="score">
+        SCORE: <span id="score">0</span>
+        &nbsp; BEST: <span id="best">0</span>
+        &nbsp; STAGE: <span id="stage">1</span>
+    </div>
+
+    <div id="game">
+        <div id="dino">🦖</div>
+
+        <div id="game-over">
+            <h2>GAME OVER!</h2>
+            <p>Your score: <span id="final-score">0</span></p>
+            <button onclick="restartGame()">RESTART</button>
+        </div>
+    </div>
+
+    <p class="instructions">
+        SPACE / UP = JUMP
+        <br>
+        DOWN ARROW = DUCK
+        <br>
+        TAP = JUMP
+    </p>
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>
